@@ -1,0 +1,8 @@
+<h1>Reddit Post Results</h1>
+
+<div ng-repeat="post in gifs">
+  <div ng-click="reOrder(post, $index)">
+    {{$index}}
+    {{post.data.url}}
+  </div>
+</div>

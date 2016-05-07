@@ -14,7 +14,6 @@ angular.module('topFiveReduxApp')
     //wrap it in a function to have it trigged on click
     $scope.allposts = redditService.search().$promise.then(function(data) {
       var gifs = [];
-      console.log(data);
       var posts = data.data.children;
       for (var i = 0; i < posts.length; i++) {
         if (!posts[i].data.domain.search('streamable')) {
@@ -22,7 +21,6 @@ angular.module('topFiveReduxApp')
         }
       }
       $scope.gifs = gifs;
-      console.log($scope.gifs);
     });
 
     $scope.reOrder = function(post, index) {

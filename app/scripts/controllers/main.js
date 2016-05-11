@@ -18,9 +18,13 @@ angular.module('topFiveReduxApp')
       for (var i = 0; i < posts.length; i++) {
         if (!posts[i].data.domain.search('streamable')) {
           gifs.push(posts[i]);
+          // add property for comments href to posts[i].data
+          // add property for cdn link to video to posts[i].data
+          // add property for cdn link to thumbnail to posts[i].data
         }
       }
       $scope.gifs = gifs;
+
     });
 
     $scope.reOrder = function(post, index) {

@@ -15,8 +15,10 @@ angular.module('topFiveReduxApp')
     $scope.allposts = redditService.search().$promise.then(function(data) {
       var gifs = [];
       var posts = data.data.children;
+      var counter = 0;
       for (var i = 0; i < posts.length; i++) {
         if (!posts[i].data.domain.search('streamable')) {
+          counter++;
           var post = posts[i];
           gifs.push(post);
 
@@ -33,6 +35,10 @@ angular.module('topFiveReduxApp')
           // add property for cdn link to thumbnail to posts[i].data
           post.videoSource = 'https://cdn.streamable.com/video/mp4/' + uniqueID + '.mp4';
 
+          // add counter property to post opbject
+          post.counter = counter;
+
+          //TODO convert post.data.created to a date object to show in view
         }
       }
       $scope.gifs = gifs;

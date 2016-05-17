@@ -15,6 +15,39 @@
     <!-- endbuild -->
   </head>
   <body ng-app="topFiveReduxApp">
+  <div class="container-fluid underline" id="container">
+    <header>
+      <div class="title col-xs-12">
+        <h1>high<span class="red-text">lites</span></h1>
+      </div>
+      <div class="col-xs-12 grey-text">
+        <h4>Quick highlights from your favorite sports</h4>
+      </div>
+      <div class="dropdown col-xs-6">
+        <button class="btn btn-default dropdown-toggle grey-text" type="button" id="subreddit-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Soccer<span class="
+caret icon-right"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="subreddit-dropdown">
+          <li><a>NBA Basketball</a></li>
+        </ul>
+      </div>
+      <div class="dropdown col-xs-6">
+        <button class="btn btn-default dropdown-toggle grey-text" type="button" id="date-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Today<span class="
+caret icon-right"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="date-dropdown">
+          <li><a>Past Week</a></li>
+          <li><a>Past Month</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </header>
+  </div>
+
+
+
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->

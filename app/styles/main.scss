@@ -11,5 +11,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
-// bootstrap layout
+// bootstrap layout and style
 @import 'layout';
+
+// fonts and colors
+@import 'font_color';

@@ -10,3 +10,14 @@
   font-weight: bold;
   src: url('../fonts/Montserrat-Bold.otf') format('opentype');
 };
+
+@font-face {
+  font-family: Montserrat;
+  src: url('https://github.com/acatella/top-five-redux/tree/master/app/fonts/Montserrat-Regular.otf');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: bold;
+  src: url('https://github.com/acatella/top-five-redux/tree/master/app/fonts/Montserrat-Bold.otf');
+}

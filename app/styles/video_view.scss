@@ -1,0 +1,39 @@
+// Colors
+$primary: #000;
+$secondary: #808283;
+$tertiary: #d56151;
+
+.red-text {
+  color: $tertiary;
+}
+
+.grey-text {
+  color: $secondary;
+}
+
+// General
+
+// Metadata Layout
+
+.number {
+  font-size: 3em;
+  vertical-align: text-top;
+  line-height: 1em;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 1.2em;
+}
+
+.details {
+  margin-bottom: 15px;
+}
+
+// Video Layout
+
+.video-container {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px $secondary solid;
+}

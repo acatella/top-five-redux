@@ -10,40 +10,78 @@
 angular.module('topFiveReduxApp')
   .controller('MainCtrl', function ($scope,$sce, redditService) {
 
-    //right now this executes on load
-    //wrap it in a function to have it trigged on click
-    $scope.allposts = redditService.search().$promise.then(function(data) {
-      var gifs = [];
-      var posts = data.data.children;
-      var counter = 0;
-      for (var i = 0; i < posts.length; i++) {
-        if (!posts[i].data.domain.search('streamable')) {
-          counter++;
-          var post = posts[i];
-          gifs.push(post);
+    $scope.refreshGifs = function(subreddit,range) {
+      $scope.allposts = redditService.search({subreddit: subreddit,range: range}).$promise.then(function(data) {
+        var gifs = [];
+        var posts = data.data.children;
+        var counter = 0;
+        for (var i = 0; i < posts.length; i++) {
+          if (!posts[i].data.domain.search('streamable')) {
+            counter++;
+            var post = posts[i];
+            gifs.push(post);
 
-          // gets unique ID for each streamable link
-          var urlArray = post.data.url.split('/');
-          var uniqueID = urlArray[urlArray.length-1];
+            // gets unique ID for each streamable link
+            var urlArray = post.data.url.split('/');
+            var uniqueID = urlArray[urlArray.length-1];
 
-          // add property for comments href to posts[i].data
-          post.commentLink = 'https://www.reddit.com' + post.data.permalink;
+            // add property for comments href to posts[i].data
+            post.commentLink = 'https://www.reddit.com' + post.data.permalink;
 
-          // add property for cdn link to thumbnail to posts[i].data
-          post.thumbnail = 'https://cdn.streamable.com/image/' + uniqueID + '.jpg';
+            // add property for cdn link to thumbnail to posts[i].data
+            post.thumbnail = 'https://cdn.streamable.com/image/' + uniqueID + '.jpg';
 
-          // add property for cdn link to thumbnail to posts[i].data
-          post.videoSource = 'https://cdn.streamable.com/video/mp4/' + uniqueID + '.mp4';
+            // add property for cdn link to thumbnail to posts[i].data
+            post.videoSource = 'https://cdn.streamable.com/video/mp4/' + uniqueID + '.mp4';
 
-          // add counter property to post opbject
-          post.counter = counter;
+            // add counter property to post opbject
+            post.counter = counter;
 
-          //TODO convert post.data.created to a date object to show in view
+            //TODO convert post.data.created to a date object to show in view
+          }
         }
-      }
-      $scope.gifs = gifs;
+        $scope.gifs = gifs;
 
-    });
+      });
+  };
+
+  // object contructor for dropdown menus
+  function DropdownObject(displayText, queryValue) {
+    this.text = displayText;
+    this.value= queryValue;
+  }
+
+  // data model for subreddit dropdown
+  var soccerSub = new DropdownObject('Soccer','soccer');
+  var nbaSub = new DropdownObject('NBA Basketball','nba');
+
+  $scope.subDropdown = {
+    selected: soccerSub,
+    options: [nbaSub],
+    changeSub: function(sub,index) {
+      this.options.push(this.selected);
+      this.options.splice(index,1);
+      this.selected = sub;
+      $scope.refreshGifs(this.selected.value,$scope.rangeDropdown.selected.value);
+    }
+  };
+
+  // data model for date range dropdown
+  var todayRange = new DropdownObject('Today','today');
+  var weekRange = new DropdownObject('Past Week','week');
+  var monthRange =  new DropdownObject('Past Month','month');
+
+  $scope.rangeDropdown = {
+    selected: todayRange,
+    options: [weekRange,monthRange],
+    changeSub: function(range,index) {
+      this.options.push(this.selected);
+      this.options.splice(index,1);
+      this.selected = range;
+      $scope.refreshGifs($scope.subDropdown.selected.value,this.selected.value);
+    }
+  };
+
 
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);

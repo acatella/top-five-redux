@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="topFiveReduxApp">
+  <body ng-app="topFiveReduxApp" ng-controller="MainCtrl" ng-init="refreshGifs('soccer','today')">
   <div class="container-fluid underline" id="container">
     <header>
       <div class="title col-xs-12">
@@ -27,21 +27,18 @@
         </div>
         <div class="dropdown col-xs-4 col-sm-2">
           <button class="btn btn-default dropdown-toggle grey-text" type="button" id="subreddit-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Soccer<span class="
-  caret icon-right"></span>
+            {{subDropdown.selected.text}}<span class="caret icon-right"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="subreddit-dropdown">
-            <li><a>NBA Basketball</a></li>
+            <li ng-repeat="sub in subDropdown.options" ng-click="subDropdown.changeSub(sub,$index)"><a>{{sub.text}}</a></li>
           </ul>
         </div>
         <div class="dropdown col-xs-4 col-sm-2">
           <button class="btn btn-default dropdown-toggle grey-text" type="button" id="date-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Today<span class="
-  caret icon-right"></span>
+            {{rangeDropdown.selected.text}}<span class="caret icon-right"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="date-dropdown">
-            <li><a>Past Week</a></li>
-            <li><a>Past Month</a></li>
+            <li ng-repeat="range in rangeDropdown.options" ng-click="rangeDropdown.changeSub(range,$index)"><a>{{range.text}}</a></li>
           </ul>
         </div>
       </div>

@@ -1,29 +1,26 @@
 // Colors
-$primary: #000;
-$secondary: #808283;
-$tertiary: #d56151;
+$black: #000;
+$gray: #808283;
+$red: #d56151;
 
-.red-text {
-  color: $tertiary;
-}
-
-.grey-text {
-  color: $secondary;
-}
 
 // General
 
+.post {
+  padding: 60px 0;
+}
 // Metadata Layout
 
-.number {
+.video-number {
+  display: inline-block;
   font-size: 3em;
   vertical-align: text-top;
   line-height: 1em;
-  margin-bottom: 15px;
 }
 
-.title {
+.post-title {
   font-size: 1.2em;
+  display: inline-block;
 }
 
 .details {
@@ -32,11 +29,6 @@ $tertiary: #d56151;
 
 // Video Layout
 
-.video-container {
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
-
-.post {
-  margin-bottom: 60px;
+video {
+  width:  100%;
 }

@@ -1,8 +1,21 @@
+<div class="post" ng-repeat="post in gifs">
+  <div class="meta-info">
+    <p class="video-number">#{{post.counter}}</p>
+    <h2 class="post-title">{{post.data.title}}</h2>
+    <p class="post-date">11/11/2011</p>
+    <a ng-href='{{post.commentLink}}' target="_blank">See Comments</a>
+  </div>
+  <video loop="loop" preload="none" poster='{{post.thumbnail}}' controls='controls'>
+    <source ng-src='{{trustSrc(post.videoSource)}}' type='video/mp4  '>
+  </video>
+</div>
 
+
+<!--
 
 <div class="container-fluid">
   <div ng-repeat="post in gifs">
-    <!-- <div ng-click="reOrder(post, $index)"> Preserving in case I want to use this function again -->
+    <div ng-click="reOrder(post, $index)"> Preserving in case I want to use this function again
     <div class="row underline post">
       <div class="metadata row col-xs-12 col-sm-4 right">
           <div class="number col-xs-3 grey-text">
@@ -24,4 +37,4 @@
         </div>
       </div>
   </div>
-</div>
+</div> -->

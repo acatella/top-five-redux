@@ -68,7 +68,7 @@ angular.module('topFiveReduxApp')
   };
 
   // data model for date range dropdown
-  var todayRange = new DropdownObject('Today','today');
+  var todayRange = new DropdownObject('Past 24 Hours','today');
   var weekRange = new DropdownObject('Past Week','week');
   var monthRange =  new DropdownObject('Past Month','month');
 

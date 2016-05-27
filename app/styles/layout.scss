@@ -18,6 +18,7 @@ body * {
 .container {
   width: 90%;
   max-width: 1000px;
+  min-width: 390px;
 }
 
 button {
@@ -88,4 +89,8 @@ header h4 {
 
 .dropdown-item:hover, .dropdown-toggle:hover {
   background: #f9f9f9;
+}
+
+.caret {
+  margin-left: 20px;
 }

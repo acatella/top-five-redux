@@ -23,13 +23,13 @@
       <h4>quick highlights from your favorite sports</h4>
       <nav>
         <div class="dropdown sub-dropdown">
-          <button class="dropdown-toggle">{{subDropdown.selected.text}}</button>
+          <button class="dropdown-toggle">{{subDropdown.selected.text}}<span class="caret"></span></button>
           <ul class="dropdown-menu sub-menu">
             <li class="dropdown-item" ng-repeat="sub in subDropdown.options" ng-click="subDropdown.changeSub(sub,$index)">{{sub.text}}</li>
           </ul>
         </div>
         <div class="dropdown range-dropdown">
-          <button class="dropdown-toggle">{{rangeDropdown.selected.text}}</button>
+          <button class="dropdown-toggle">{{rangeDropdown.selected.text}}<span class="caret"></span></button>
           <ul class="dropdown-menu range-menu">
             <li class="dropdown-item" ng-repeat="range in rangeDropdown.options" ng-click="rangeDropdown.changeSub(range,$index)">{{range.text}}</li>
           </ul>

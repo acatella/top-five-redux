@@ -10,7 +10,8 @@
 angular.module('topFiveReduxApp')
   .controller('MainCtrl', function ($scope,$sce, redditService) {
 
-    $scope.refreshGifs = function(subreddit,range) {
+  // populates gifs for given subreddit and date range
+  $scope.refreshGifs = function(subreddit,range) {
       $scope.allposts = redditService.search({subreddit: subreddit,range: range}).$promise.then(function(data) {
         var gifs = [];
         var posts = data.data.children;

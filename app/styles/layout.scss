@@ -3,91 +3,89 @@
 $font-stack: 'Montserrat', sans-serif;
 
 // Colors
-$primary: #000;
-$secondary: #808283;
-$tertiary: #d56151;
+$black: #000;
+$gray: #808283;
+$red: #d56151;
 
-.red-text {
-  color: $tertiary;
-}
-
-.grey-text {
-  color: $secondary;
-}
-
-// General
-
-header {
-  height: 100%;
-}
-
-.container-fluid * {
+// General style
+body * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: $font-stack;
-  box-sizing: border-box;
 }
 
-a:hover {
-  cursor: pointer;
-}
-
-.container-fluid {
-  max-width: 960px;
+.container {
   width: 90%;
-  margin: 60px auto 0;
-  padding: 0;
-  box-sizing: border-box;
+  max-width: 1000px;
 }
 
-.dropdown .icon-right {
-  margin-left: 15%;
-  display: inline-block;
-}
-
-button.btn {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: 0;
-}
-
-// Header Style
-.title h1 {
+button {
+  border: none;
+  background:  #fff;
   text-transform: uppercase;
+}
+// Header styling
+
+header {
+  border-bottom: 1px  solid $gray;
+}
+
+header h1 {
+  padding: 80px 0;
   font-weight: bold;
-  margin-bottom: 80px;
-}
-
-.container-fluid h4 {
-   font-size: 12px;
-   text-transform: uppercase;
-}
-
-.info {
-  height: 36px;
-  padding-top: 13px;
-}
-#subreddit-dropdown, #date-dropdown {
-  border:  none;
-  width: 100%;
-  text-align: left;
-  background-color: #fff;
   text-transform: uppercase;
-  font-size: 12px;
+  color: $black;
+}
+
+.highlight {
+  color: $red;
+}
+
+header h4 {
+  color: $gray;
+  text-transform: uppercase;
+  padding-bottom: 16px 0;
+  margin-bottom: 14px;
+  font-size:  12px;
 }
 
 .dropdown {
-  margin-bottom: 25px;
+  display: inline-block;
+  width: 50%;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  margin-right: -4px;
+  position: relative;
+  color: $gray;
 }
 
-.btn:hover {
+.sub-dropdown:hover .sub-menu, .range-dropdown:hover .range-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  width: 100%;
+  position: absolute;
+  display: none;
+  text-transform: uppercase;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item, .dropdown-toggle {
+  text-align: center;
+  width: 100%;
+  padding: 16px 0;
+  font-size: 12px;
+  line-height: 1;
   background: #fff;
 }
 
-.underline {
-  border-bottom: 1px solid $secondary;
-}
-
-video {
-  max-width: 100%;
+.dropdown-item:hover, .dropdown-toggle:hover {
+  background: #f9f9f9;
 }

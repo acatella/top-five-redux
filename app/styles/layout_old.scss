@@ -1,0 +1,94 @@
+// Layout for Main View
+
+$font-stack: 'Montserrat', sans-serif;
+
+// Colors
+$primary: #000;
+$secondary: #808283;
+$tertiary: #d56151;
+
+.red-text {
+  color: $tertiary;
+}
+
+.grey-text {
+  color: $secondary;
+}
+
+// General
+
+header {
+  height: 100%;
+}
+
+.container-fluid * {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  box-sizing: border-box;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.container-fluid {
+  max-width: 960px;
+  width: 90%;
+  margin: 60px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dropdown .icon-right {
+  margin-left: 15%;
+  display: inline-block;
+}
+
+button.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 0;
+}
+
+// Header Style
+.title h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 80px;
+}
+
+.container-fluid h4 {
+   font-size: 12px;
+   text-transform: uppercase;
+}
+
+.info {
+  height: 36px;
+  padding-top: 13px;
+}
+
+#subreddit-dropdown, #date-dropdown {
+  border:  none;
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.dropdown {
+  margin-bottom: 25px;
+}
+
+.btn:hover {
+  background: #fff;
+}
+
+.underline {
+  border-bottom: 1px solid $secondary;
+}
+
+video {
+  max-width: 100%;
+}

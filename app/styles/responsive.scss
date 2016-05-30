@@ -2,12 +2,11 @@
 
 @media only screen and (min-width: 750px)  {
 
-
+// Header styles
 nav {
   float: right;
   max-width: 400px;
   min-width: 300px;
-  // width: 40%;
 }
 
 header h4 {
@@ -23,6 +22,36 @@ header h4 {
   text-align: right;
   padding-right: 10px;
   width: 160px;
+}
+
+// Video styles
+
+.video-container {
+  width: 55%;
+}
+
+.meta-info {
+  float: right;
+  width: 45%;
+}
+
+.video-number {
+  width: 88.5%;
+  margin-left: 12.5%;
+  margin-top: 8%;
+  margin-right: 0;
+  margin-bottom: 4%;
+}
+
+.post-title {
+  margin-bottom: 20px;
+  margin-left: 12.5%;
+  width: 82%;
+  margin-bottom: 4%;
+}
+
+.post-date {
+  margin-left: 12.5%;
 }
 
 }

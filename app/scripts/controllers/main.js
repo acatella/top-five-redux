@@ -59,11 +59,19 @@ angular.module('topFiveReduxApp')
   $scope.subDropdown = {
     selected: soccerSub,
     options: [nbaSub],
+    visibility: 'hidden',
+    toggleVis: function() {
+      if (this.visibility === 'hidden') {
+        this.visibility =  'visible';
+      }
+      else {this.visibility = 'hidden';}
+    },
     changeSub: function(sub,index) {
       this.options.push(this.selected);
       this.options.splice(index,1);
       this.selected = sub;
       $scope.refreshGifs(this.selected.value,$scope.rangeDropdown.selected.value);
+      this.toggleVis();
     }
   };
 
@@ -75,11 +83,19 @@ angular.module('topFiveReduxApp')
   $scope.rangeDropdown = {
     selected: todayRange,
     options: [weekRange,monthRange],
+    visibility: 'hidden',
+    toggleVis: function() {
+      if (this.visibility === 'hidden') {
+        this.visibility =  'visible';
+      }
+      else {this.visibility = 'hidden';}
+    },
     changeSub: function(range,index) {
       this.options.push(this.selected);
       this.options.splice(index,1);
       this.selected = range;
       $scope.refreshGifs($scope.subDropdown.selected.value,this.selected.value);
+      this.toggleVis();
     }
   };
 
@@ -87,16 +103,5 @@ angular.module('topFiveReduxApp')
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
     };
-
-    $scope.reOrder = function(post, index) {
-      var tmp = post;
-      $scope.gifs.splice(index,1);
-      $scope.gifs.unshift(tmp);
-    };
-
-    // jQuery to toggle video masks
-    // $scope.playToggle = function(div) {
-    //   $(div + ' .video-container .mask').addClass('hidden');
-    // };
 
   });

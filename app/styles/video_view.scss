@@ -8,25 +8,45 @@ $red: #d56151;
 
 .post {
   padding: 60px 0;
+  border-bottom: 1px solid $gray;
 }
 // Metadata Layout
 
 .video-number {
   display: inline-block;
-  font-size: 3em;
+  font-size: 50px;
+  font-weight: 700;
+  width:60px;
   vertical-align: text-top;
-  line-height: 1em;
+  line-height: 1;
+  color: $gray;
+  float: left;
+  margin: 0 15px 20px 0;
 }
 
 .post-title {
   font-size: 1.2em;
+  min-height: 70px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.post-date {
+  color: $gray;
   display: inline-block;
+  font-size: 15px;
+  line-height: 1;
+  min-width: 66.875px;
+  margin: 0 16px 30px 75px;
 }
 
-.details {
-  margin-bottom: 15px;
+.video-number .hash {
+  font-size: 35px;
 }
 
+.post-date, .comment-link {
+  font-size: 12px;
+}
 // Video Layout
 
 .video-container {

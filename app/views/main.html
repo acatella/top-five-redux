@@ -1,9 +1,9 @@
 <div class="post" ng-repeat="post in gifs">
   <div class="meta-info">
-    <p class="video-number">#{{post.counter}}</p>
+    <p class="video-number"><span class="hash">#</span>{{post.counter}}</p>
     <h2 class="post-title">{{post.data.title}}</h2>
     <p class="post-date">11/11/2011</p>
-    <a ng-href='{{post.commentLink}}' target="_blank">See Comments</a>
+    <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank">See Comments</a>
   </div>
   <div class="video-container">
     <div class="mask"><div class="play-button"></div></div>

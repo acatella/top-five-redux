@@ -17,7 +17,7 @@ body * {
 
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1050px;
   min-width: 390px;
 }
 
@@ -63,7 +63,6 @@ header h4 {
 }
 
 .sub-dropdown:hover .sub-menu, .range-dropdown:hover .range-menu {
-  display: block;
   cursor: pointer;
 }
 
@@ -76,6 +75,14 @@ header h4 {
   border: none;
   margin: 0;
   padding: 0;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 .dropdown-item, .dropdown-toggle {

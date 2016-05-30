@@ -3,8 +3,9 @@
 $font-stack: 'Montserrat', sans-serif;
 
 // Colors
-$black: #000;
-$gray: #808283;
+$black: #595d61;
+$gray: #c8cacb;
+$dark-gray: #959595;
 $red: #d56151;
 
 // General style
@@ -44,7 +45,7 @@ header h1 {
 }
 
 header h4 {
-  color: $gray;
+  color: $dark-gray;
   text-transform: uppercase;
   padding: 16px 0;
   margin-bottom: 14px;
@@ -59,9 +60,12 @@ header h4 {
   margin-bottom: 14px;
   margin-right: -4px;
   position: relative;
-  color: $gray;
+  color: $dark-gray;
 }
 
+.dropdown-toggle {
+  line-height: 23px;
+}
 .sub-dropdown:hover .sub-menu, .range-dropdown:hover .range-menu {
   cursor: pointer;
 }
@@ -88,9 +92,8 @@ header h4 {
 .dropdown-item, .dropdown-toggle {
   text-align: center;
   width: 100%;
-  padding: 16px 0;
+  padding: 8px 0;
   font-size: 12px;
-  line-height: 1;
   background: #fff;
 }
 
@@ -98,6 +101,29 @@ header h4 {
   background: #f9f9f9;
 }
 
-.caret {
+.caret-custom {
+  background-image: url('../images/down-gray-chevron.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  height:11px;
+  width: 18.33px;
   margin-left: 20px;
+}
+
+.icon {
+
+
+}
+
+.soccerIcon {
+
+}
+
+.basketballIcon {
+
+}
+
+.clockIcon {
+
 }

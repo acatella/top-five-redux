@@ -1,6 +1,7 @@
 // Colors
-$black: #000;
-$gray: #808283;
+$black: #595d61;
+$gray: #c8cacb;
+$dark-gray: #959595;
 $red: #d56151;
 
 
@@ -29,6 +30,7 @@ $red: #d56151;
   min-height: 70px;
   font-weight: 400;
   line-height: 25px;
+  color: $black;
 }
 
 .post-date {
@@ -46,6 +48,10 @@ $red: #d56151;
 
 .post-date, .comment-link {
   font-size: 12px;
+}
+
+.comment-link {
+  color: #28a1d9;
 }
 // Video Layout
 
@@ -65,6 +71,10 @@ video {
   z-index: -1;
 }
 
+video:hover {
+  cursor: pointer;
+}
+
 .mask {
    display: flex;
    align-items: center;
@@ -81,6 +91,10 @@ video {
 
 .mask:hover {
   cursor: pointer;
+}
+
+.mask-off {
+  display: none;
 }
 
 .play-button {

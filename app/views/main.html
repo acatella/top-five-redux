@@ -6,8 +6,8 @@
     <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank">See Comments</a>
   </div>
   <div class="video-container">
-    <div class="mask"><div class="play-button"></div></div>
-    <video loop="loop" preload="none" poster='{{post.thumbnail}}' controls='controls'>
+    <!-- <div class="mask"><div class="play-button"></div></div> -->
+    <video loop="loop" preload="none" poster='{{post.thumbnail}}' controls>
       <source ng-src='{{trustSrc(post.videoSource)}}' type='video/mp4'>
     </video>
   </div>

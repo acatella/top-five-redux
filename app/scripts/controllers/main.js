@@ -1,5 +1,5 @@
 'use strict';
-
+/*global $ */
 /**
  * @ngdoc function
  * @name topFiveReduxApp.controller:MainCtrl
@@ -47,14 +47,15 @@ angular.module('topFiveReduxApp')
   };
 
   // object contructor for dropdown menus
-  function DropdownObject(displayText, queryValue) {
+  function DropdownObject(displayText, queryValue, iconClass) {
     this.text = displayText;
-    this.value= queryValue;
+    this.value = queryValue;
+    this.icon = iconClass;
   }
 
   // data model for subreddit dropdown
-  var soccerSub = new DropdownObject('Soccer','soccer');
-  var nbaSub = new DropdownObject('NBA Basketball','nba');
+  var soccerSub = new DropdownObject('Soccer','soccer','soccerIcon');
+  var nbaSub = new DropdownObject('NBA Basketball','nba','basketballIcon');
 
   $scope.subDropdown = {
     selected: soccerSub,
@@ -76,9 +77,9 @@ angular.module('topFiveReduxApp')
   };
 
   // data model for date range dropdown
-  var todayRange = new DropdownObject('Past 24 Hours','today');
-  var weekRange = new DropdownObject('Past Week','week');
-  var monthRange =  new DropdownObject('Past Month','month');
+  var todayRange = new DropdownObject('Past 24 Hours','today','clockIcon');
+  var weekRange = new DropdownObject('Past Week','week','clockIcon');
+  var monthRange =  new DropdownObject('Past Month','month','clockIcon');
 
   $scope.rangeDropdown = {
     selected: todayRange,
@@ -96,6 +97,19 @@ angular.module('topFiveReduxApp')
       this.selected = range;
       $scope.refreshGifs($scope.subDropdown.selected.value,this.selected.value);
       this.toggleVis();
+    }
+  };
+
+  // Video playback controls
+  $scope.togglePlay = function(event,$index) {
+    var target = $(event.target);
+    var video = document.getElementsByTagName('video')[$index];
+    if (video.paused) {
+      target.addClass('mask-off');
+      video.play();
+    }
+    else {
+      video.pause();
     }
   };
 

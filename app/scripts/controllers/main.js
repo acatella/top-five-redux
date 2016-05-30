@@ -94,4 +94,9 @@ angular.module('topFiveReduxApp')
       $scope.gifs.unshift(tmp);
     };
 
+    // jQuery to toggle video masks
+    // $scope.playToggle = function(div) {
+    //   $(div + ' .video-container .mask').addClass('hidden');
+    // };
+
   });

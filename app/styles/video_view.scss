@@ -29,6 +29,48 @@ $red: #d56151;
 
 // Video Layout
 
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container:after {
+  content: '';
+  display: block;
+  margin-bottom: -5px;
+}
+
 video {
   width:  100%;
+  z-index: -1;
+}
+
+.mask {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.2));
+   z-index: 100;
+}
+
+
+.mask:hover {
+  cursor: pointer;
+}
+
+.play-button {
+  width: 10%;
+  background: $red;
+  border-radius: 50%;
+}
+
+.play-button:after {
+  content:"";
+  display: block;
+  padding-bottom: 100%;
 }

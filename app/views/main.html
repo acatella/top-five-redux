@@ -2,8 +2,8 @@
   <div class="meta-info">
     <p class="video-number"><span class="hash">#</span>{{post.counter}}</p>
     <h2 class="post-title">{{post.data.title}}</h2>
-    <p class="post-date">11/11/2011</p>
-    <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank"><span class="link-text">See Comments</span><span class="new-tab-icon"></span></a>
+    <p class="post-date">{{post.postMonth}}/{{post.postDay}}/{{post.postYear}}</p>
+    <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank"><span class="link-text">{{post.data.num_comments}} Comments</span><span class="new-tab-icon"></span></a>
   </div>
   <div class="video-container" ng-click="togglePlay($index)">
     <div class="mask" id="mask{{$index}}"><div class="play-button"><div class="triangle-right"></div></div></div>

@@ -39,7 +39,12 @@ angular.module('topFiveReduxApp')
             // add counter property to post opbject
             post.counter = counter;
 
-            //TODO convert post.data.created to a date object to show in view
+            // converts epoch time into date opbject
+            var postDate = new Date(post.data.created * 1000);
+            post.postDay = postDate.getDate();
+            post.postMonth = postDate.getMonth() + 1;
+            post.postYear = postDate.getFullYear();
+
           }
         }
         $scope.gifs = gifs;

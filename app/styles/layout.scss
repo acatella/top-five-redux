@@ -101,6 +101,14 @@ header h4 {
   background: #f9f9f9;
 }
 
+.dropdown-text {
+  line-height: 20px;
+  margin-left: 15px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
 .caret-custom {
   background-image: url('../images/down-gray-chevron.png');
   background-repeat: no-repeat;
@@ -108,22 +116,34 @@ header h4 {
   display: inline-block;
   height:11px;
   width: 18.33px;
-  margin-left: 20px;
+  margin-left: 15px;
+  position: relative;
+  top: -2px;
 }
 
 .icon {
+  background-image: url('../images/sprites/dropdown-sprite.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+  position: relative;
+  top: 3.5px;
+}
 
-
+li .icon {
+  top:3px;
 }
 
 .soccerIcon {
-
+  background-position: 0 0;
 }
 
 .basketballIcon {
-
+  background-position: 0 -40px;
 }
 
 .clockIcon {
-
+ background-position: 0 -20px;
 }

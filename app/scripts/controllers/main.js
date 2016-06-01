@@ -16,6 +16,7 @@ angular.module('topFiveReduxApp')
         var gifs = [];
         var posts = data.data.children;
         var counter = 0;
+
         for (var i = 0; i < posts.length; i++) {
           if (!posts[i].data.domain.search('streamable')) {
             counter++;
@@ -42,7 +43,6 @@ angular.module('topFiveReduxApp')
           }
         }
         $scope.gifs = gifs;
-
       });
   };
 
@@ -101,15 +101,18 @@ angular.module('topFiveReduxApp')
   };
 
   // Video playback controls
-  $scope.togglePlay = function(event,$index) {
-    var target = $(event.target);
-    var video = document.getElementsByTagName('video')[$index];
-    if (video.paused) {
-      target.addClass('mask-off');
-      video.play();
+  $scope.togglePlay = function($index) {
+    var $video = $('video')[$index];
+    var $mask = $('#mask' + $index);
+
+    if ($video.paused) {
+      $mask.addClass('mask-off');
+      $video.play();
     }
+
     else {
-      video.pause();
+      $video.pause();
+      $mask.removeClass('mask-off');
     }
   };
 

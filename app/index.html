@@ -23,15 +23,15 @@
       <h4>quick highlights from your favorite sports</h4>
       <nav>
         <div class="dropdown sub-dropdown">
-          <button class="dropdown-toggle" ng-click="subDropdown.toggleVis()"><span class="icon {{subDropdown.selected.icon}}"></span>{{subDropdown.selected.text}}<span class="caret-custom"></span></button>
+          <button class="dropdown-toggle" ng-click="subDropdown.toggleVis()"><span class="icon {{subDropdown.selected.icon}}"></span><span class="dropdown-text">{{subDropdown.selected.text}}</span><span class="caret-custom"></span></button>
           <ul class="dropdown-menu sub-menu {{subDropdown.visibility}}">
-            <li class="dropdown-item" ng-repeat="sub in subDropdown.options" ng-click="subDropdown.changeSub(sub,$index)">{{sub.text}}</li>
+            <li class="dropdown-item" ng-repeat="sub in subDropdown.options" ng-click="subDropdown.changeSub(sub,$index)"><span class="icon {{sub.icon}}"></span><span class="dropdown-text">{{sub.text}}</span></li>
           </ul>
         </div>
         <div class="dropdown range-dropdown">
-          <button class="dropdown-toggle" ng-click="rangeDropdown.toggleVis()"><span class="icon {{rangeDropdown.selected.icon}}"></span>{{rangeDropdown.selected.text}}<span class="caret-custom"></span></button>
+          <button class="dropdown-toggle" ng-click="rangeDropdown.toggleVis()"><span class="icon {{rangeDropdown.selected.icon}}"></span><span class="dropdown-text">{{rangeDropdown.selected.text}}</span><span class="caret-custom"></span></button>
           <ul class="dropdown-menu range-menu {{rangeDropdown.visibility}}">
-            <li class="dropdown-item" ng-repeat="range in rangeDropdown.options" ng-click="rangeDropdown.changeSub(range,$index)">{{range.text}}</li>
+            <li class="dropdown-item" ng-repeat="range in rangeDropdown.options" ng-click="rangeDropdown.changeSub(range,$index)"><span class="dropdown-text"><span class="icon {{range.icon}}"></span><span class="dropdown-text">{{range.text}}</span></span></li>
           </ul>
         </div>
       </nav>

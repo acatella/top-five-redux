@@ -3,11 +3,11 @@
     <p class="video-number"><span class="hash">#</span>{{post.counter}}</p>
     <h2 class="post-title">{{post.data.title}}</h2>
     <p class="post-date">11/11/2011</p>
-    <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank">See Comments</a>
+    <a class="comment-link" ng-href='{{post.commentLink}}' target="_blank"><span class="link-text">See Comments</span><span class="new-tab-icon"></span></a>
   </div>
-  <div class="video-container">
-    <!-- <div class="mask"><div class="play-button"></div></div> -->
-    <video loop="loop" preload="none" poster='{{post.thumbnail}}' controls>
+  <div class="video-container" ng-click="togglePlay($index)">
+    <div class="mask" id="mask{{$index}}"><div class="play-button"><div class="triangle-right"></div></div></div>
+    <video id="video{{$index}}" loop="loop" preload="none" poster='{{post.thumbnail}}'>
       <source ng-src='{{trustSrc(post.videoSource)}}' type='video/mp4'>
     </video>
   </div>

@@ -105,7 +105,7 @@ angular.module('topFiveReduxApp')
     }
   };
 
-  // Video playback controls
+  // Video playback controls to use custom button
   $scope.togglePlay = function($index) {
     var $video = $('video')[$index];
     var $mask = $('#mask' + $index);

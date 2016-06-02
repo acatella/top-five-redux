@@ -78,9 +78,7 @@ video:hover {
 }
 
 .mask {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   display: block;
    position: absolute;
    top: 0;
    left: 0;
@@ -96,26 +94,27 @@ video:hover {
 }
 
 .mask:hover .play-button {
-  width: 12%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
-.mask:hover .triangle-right {
-  border-left: 12px solid #fff;
-  border-top:  6px solid transparent;
-  border-bottom: 6px solid transparent;
-}
+
 .mask-off {
   display: none;
 }
 
 .play-button {
-  width: 10%;
+  width: 50px;
+  height: 50px;
   background: $red;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width .1s;
+  position:  absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -25px;
+  margin-left: -25px;  
 }
 
 .play-button:after {
@@ -125,6 +124,11 @@ video:hover {
 }
 
 .triangle-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
   width: 0;
   height: 0;
   border-left: 10px solid #fff;
@@ -146,4 +150,11 @@ video:hover {
 
 .link-text {
   margin-right: 5px;
+}
+
+// CSS to hide video controls on iOS
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none
 }

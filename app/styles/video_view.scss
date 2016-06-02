@@ -114,7 +114,7 @@ video:hover {
   left: 50%;
   top: 50%;
   margin-top: -25px;
-  margin-left: -25px;  
+  margin-left: -25px;
 }
 
 .play-button:after {
@@ -157,4 +157,10 @@ video:hover {
 *::-webkit-media-controls-start-playback-button {
   display: none!important;
   -webkit-appearance: none
+}
+
+// Clearfix div
+
+.clearfix {
+  clear: both;
 }

@@ -7,6 +7,13 @@
  * # MainCtrl
  * Controller of the topFiveReduxApp
  */
+
+ //TODO: add a favorite view and favorite button that stores vids in angular local storgae
+ //TODO: add a pause button overlay and full screen button overlay
+ //TODO: add functionality to close dropdown when user clicks anywhere
+ //TODO: add favicon and page title
+ //TODO: add footer w/ link to my portfolio page and github for app
+ 
 angular.module('topFiveReduxApp')
   .controller('MainCtrl', function ($scope,$sce, redditService) {
 

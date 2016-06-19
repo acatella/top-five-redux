@@ -26,7 +26,7 @@ $red: #d56151;
 }
 
 .post-title {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   min-height: 70px;
   font-weight: 400;
   line-height: 25px;
@@ -40,7 +40,7 @@ $red: #d56151;
   font-size: 15px;
   line-height: 1;
   min-width: 66.875px;
-  margin: 0 16px 30px 90px;  
+  margin: 0 16px 30px 90px;
 }
 
 .video-number .hash {
@@ -152,7 +152,16 @@ video:hover {
   margin-right: 5px;
 }
 
-// CSS to hide video controls on iOS
+// Message styling
+
+.message {
+  padding-top: 174px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: $black;  
+}
+
+// CSS to hide video controls and overlay on iOS
 
 *::-webkit-media-controls-start-playback-button {
   display: none!important;

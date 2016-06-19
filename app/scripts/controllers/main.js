@@ -13,9 +13,11 @@
  //TODO: add functionality to close dropdown when user clicks anywhere
  //TODO: add favicon and page title
  //TODO: add footer w/ link to my portfolio page and github for app
- 
+
 angular.module('topFiveReduxApp')
   .controller('MainCtrl', function ($scope,$sce, redditService) {
+  //Global variables
+
 
   // populates gifs for given subreddit and date range
   $scope.refreshGifs = function(subreddit,range) {
@@ -23,6 +25,7 @@ angular.module('topFiveReduxApp')
         var gifs = [];
         var posts = data.data.children;
         var counter = 0;
+        $scope.messageVis = "hidden";
 
         for (var i = 0; i < posts.length; i++) {
           if (!posts[i].data.domain.search('streamable')) {
@@ -54,6 +57,17 @@ angular.module('topFiveReduxApp')
 
           }
         }
+
+        // displays message if there are no videos to play
+        if (gifs.length === 0) {
+          $scope.messageVis = '';
+          console.log(gifs.length);
+        }
+
+        else {
+          $scope.messageVis = 'hidden';
+        }
+
         $scope.gifs = gifs;
       });
   };
